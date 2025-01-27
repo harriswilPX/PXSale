@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParseX - Buy Tokens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Buy ParseX Tokens</h1>
+        <p>Total Tokens Available: <span id="totalTokens">12,500,000</span></p>
+        <p>Price per Token: 0.016 USDC</p>
+        
+        <div class="wallet-status">
+            <button id="connectWallet">Connect Phantom Wallet</button>
+            <p id="walletAddress"></p>
+        </div>
+
+        <div class="purchase-form">
+            <label for="usdcAmount">Enter Amount in USDC:</label>
+            <input type="number" id="usdcAmount" placeholder="Amount in USDC" min="0.016" step="0.016">
+            <button id="buyButton">Buy Tokens</button>
+        </div>
+
+        <div class="progress-bar">
+            <label>Tokens Sold:</label>
+            <progress id="tokenProgress" value="0" max="12500000"></progress>
+            <span id="tokensSold">0</span> / 12,500,000
+        </div>
+
+        <div id="message"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@1.30.0/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/phantom-connect@latest"></script>
+    <script src="app.js"></script>
+</body>
+</html>
